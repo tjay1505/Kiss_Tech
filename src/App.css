@@ -1,0 +1,88 @@
+:root{
+    --bg-main:rgb(171, 171, 171);
+    --txt:black;
+    --bg-sec:grey;
+}
+.jk-cont{
+    background: var(--bg-main);
+}
+html{
+    width: 100vw;
+    overflow-x: hidden;
+}
+/* ============================ header */
+.jk-head{
+    height: 15vh;
+}
+@media screen and (min-width:400px) {
+    .jk-head{
+        height: 10vh;
+    }
+}
+/* ============================ Landing */
+.jk-slider{
+    width: 90%;
+}
+.jk-slider-div{
+    height:500px;
+    background-color: greenyellow !important;
+}
+/* ============================ OurService */
+.jk-service{
+    height: 60vh;
+}
+.jk-serv-box{
+    height: 40%;
+    padding: 40px 0 !important;
+}
+.jk-serv-box p{
+    font-size: 10px;
+}
+.jk-serv-img{
+    top: -30px;
+}
+/* ============================ Product */
+.jk-product-slide{
+ height: 50vh;
+}
+.pro-slide-one{
+    top: 0;
+    position: absolute;
+    left: 300px;
+}
+.pro-slide-two{
+    bottom: 0;
+    position: absolute;
+    right: 300px;
+}
+
+.jk-pro-box{
+    width: 250px;
+    height: 150px;
+    background-color: rgb(58, 172, 228);
+}
+.jk-pro-box:nth-child(even){
+    background-color: rgb(5, 48, 70);
+    color: wheat;
+}
+/* ============================ Product */
+.jk-testy{
+    height: 50vh;
+}
+.jk-testy-slide{
+    width: 90%;
+}
+.jk-testy-slide div{
+   height: 45vh;
+   margin-left: 1%;
+}
+.dbq{
+    font-size: 15vmin;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+}
+/* ============================ Product */
+.jk-footer{
+    height:auto;
+    background: linear-gradient(110deg,rgb(0, 81, 162),rgb(0, 28, 53));
+}
