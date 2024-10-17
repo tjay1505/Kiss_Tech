@@ -1,88 +1,173 @@
-:root{
-    --bg-main:rgb(171, 171, 171);
-    --txt:black;
-    --bg-sec:grey;
+:root {
+  --bg-main: rgb(255, 255, 255);
+  --txt: black;
+  --clr-prime: rgb(168, 104, 245);
+  --bg-sec:linear-gradient(to right,rgb(79.22%, 65.88%, 97.65%),rgb(39.22%, 20.78%, 61.57%));
+  --bg-tri:rgb(23.92%, 14.9%, 34.9%);
+  --bg-2-stops:rgb(79.22%, 65.88%, 97.65%),rgb(86, 42, 141);
 }
-.jk-cont{
-    background: var(--bg-main);
+.clr-prime {
+  color: var(--clr-prime);
 }
-html{
-    width: 100vw;
-    overflow-x: hidden;
+.jk-cont {
+  background: var(--bg-main);
+  width: 100vw;
+  overflow-x: hidden;
+}
+html {
+  width: 100vw;
+  overflow-x: hidden;
 }
 /* ============================ header */
-.jk-head{
-    height: 15vh;
-}
-@media screen and (min-width:400px) {
-    .jk-head{
-        height: 10vh;
-    }
-}
-/* ============================ Landing */
-.jk-slider{
-    width: 90%;
-}
-.jk-slider-div{
-    height:500px;
-    background-color: greenyellow !important;
-}
-/* ============================ OurService */
-.jk-service{
-    height: 60vh;
-}
-.jk-serv-box{
-    height: 40%;
-    padding: 40px 0 !important;
-}
-.jk-serv-box p{
-    font-size: 10px;
-}
-.jk-serv-img{
-    top: -30px;
-}
-/* ============================ Product */
-.jk-product-slide{
- height: 50vh;
-}
-.pro-slide-one{
-    top: 0;
-    position: absolute;
-    left: 300px;
-}
-.pro-slide-two{
-    bottom: 0;
-    position: absolute;
-    right: 300px;
+.jk-head {
+  height: 15vh;
 }
 
-.jk-pro-box{
-    width: 250px;
-    height: 150px;
-    background-color: rgb(58, 172, 228);
+/* ============================ Landing */
+.jk-slider {
+  width: 90%;
 }
-.jk-pro-box:nth-child(even){
-    background-color: rgb(5, 48, 70);
-    color: wheat;
+.jk-slider-div {
+  height:auto;
+}
+.jk-head-h1 {
+    top: 210px;
+    left: 300px;
+    background: var(--bg-main);
+  }
+  .jk-head-in {
+    height: 45vh;
+  }
+  .slick-dots li.slick-active button:before {
+    color: var(--clr-prime) !important;
+  }
+  .slick-arrow {
+    display: none !important;
+  }
+  @media screen and (max-width: 500px) {
+    .jk-head {
+      height: 10vh;
+    }
+    .jk-head-h1 {
+      top: 280px;
+      left: 150px;
+    }
+    .jk-head-in{
+        height: 45vh;
+    }
+  }
+  @media screen and (min-width: 300px) {
+    
+    .jk-head-h1 {
+      top: 180px;
+      left: 150px;
+    }
+    
+  }
+  @media screen and (min-width: 300px) {
+    
+    .jk-head-h1 {
+      top: 210px;
+      left: 150px;
+    }
+    
+  }
+/* ============================ Aboutus */
+
+/* ============================ OurService */
+.jk-service {
+  height: 60vh;
+  background: linear-gradient(10deg, var(--bg-2-stops));
+  background: var(--bg-tri);
+}
+.jk-service-1{
+    background: var(--bg-tri);
+    
+}
+.jk-serv-box {
+  height: 40%;
+  padding: 40px 0 !important;
+}
+.jk-serv-box p {
+  font-size: 10px;
+}
+.jk-serv-img {
+  top: -30px;
+  background: var(--bg-tri);
 }
 /* ============================ Product */
-.jk-testy{
-    height: 50vh;
+.jk-product-slide {
+  height: 55vh;
 }
-.jk-testy-slide{
-    width: 90%;
+.pro-slide-one {
+  top: 0;
+  position: absolute;
+  left: 300px;
 }
-.jk-testy-slide div{
-   height: 45vh;
-   margin-left: 1%;
+.pro-slide-two {
+  bottom: 0;
+  position: absolute;
+  right: 300px;
 }
-.dbq{
-    font-size: 15vmin;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-style: italic;
+
+.jk-pro-box {
+  width: 250px;
+  height: 150px;
+  background:var(--clr-prime);
+}
+.jk-pro-box:nth-child(even) {
+  background-color: var(--bg-tri);
+  color: wheat;
+}
+@media screen and (max-width: 580px) {
+    .jk-product-slide{
+        height: 45vh;
+    }
+    .jk-pro-box{
+        height: auto;
+    }
+    .pro-slide-one{
+      left: 250px;
+    }
+    .pro-slide-two{
+      right: 250px;
+    }
 }
 /* ============================ Product */
-.jk-footer{
-    height:auto;
-    background: linear-gradient(110deg,rgb(0, 81, 162),rgb(0, 28, 53));
+.jk-testy {
+  height: 60vh;
+}
+.jk-testy-slide {
+  width: 90%;
+}
+.jk-testy-slide div {
+  height: 55vh;
+  margin-left: 1%;
+}
+.dbq {
+  font-size: 15vmin;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-style: italic;
+}
+@media screen and (max-width:499px) {
+  .jk-testy-slide div{
+    height:45vh;
+  }
+}
+/* ============================ Product */
+
+.jk-footer {
+  height: auto;
+  background:var(--bg-tri);
+}
+.jk-footer-in{
+    background:var(--bg-sec);
+}
+/* ============================ testimonal */
+.jk-border{
+  border-bottom: 1px solid var(--bg-main) !important;
+}
+.star{
+  height: 20px;
+  border: 2px solid red !important;
 }
