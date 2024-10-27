@@ -39,7 +39,7 @@ export default function Product() {
         <div className="pro-slide-one d-flex flex-md-nowrap  flex-row align-items-center col-12 justify-content-evenly my-2">
           {first5.map((e) => (
             <React.Fragment key={e.id} >
-                <a href="#" className="jk-pro-box d-flex flex-column align-items-center justify-content-evenly me-3  mb-md-0 py-3 mb-2 text-white text-decoration-none" >
+                <a href={e.links} className="jk-pro-box d-flex flex-column align-items-center justify-content-evenly me-3  mb-md-0 py-3 mb-2 text-white text-decoration-none" >
                   <img src={e.img} className="col-8" alt="" />
                     <p className=" fs-5" >{e.txt}</p>
                 </a>
@@ -49,7 +49,7 @@ export default function Product() {
         <div className="pro-slide-two d-flex my-5 flex-md-nowrap flex-row align-items-center col-12 justify-content-evenly">
         {last5.map((e) => (
             <React.Fragment key={e.id} >
-                <a href="#" className="jk-pro-box d-flex flex-column align-items-center justify-content-evenly me-3 mb-md-0 py-3 mb-2 text-white text-decoration-none" >
+                <a href={e.links} className="jk-pro-box d-flex flex-column align-items-center justify-content-evenly me-3 mb-md-0 py-3 mb-2 text-white text-decoration-none" >
                   <img src={e.img} className="col-8" alt="" />
                     <p className=" fs-5" >{e.txt}</p>
                 </a>

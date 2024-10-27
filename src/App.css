@@ -2,9 +2,16 @@
   --bg-main: rgb(255, 255, 255);
   --txt: black;
   --clr-prime: rgb(168, 104, 245);
-  --bg-sec:linear-gradient(to right,rgb(79.22%, 65.88%, 97.65%),rgb(39.22%, 20.78%, 61.57%));
-  --bg-tri:rgb(23.92%, 14.9%, 34.9%);
-  --bg-2-stops:rgb(79.22%, 65.88%, 97.65%),rgb(86, 42, 141);
+  --bg-sec: linear-gradient(
+    to right,
+    rgb(79.22%, 65.88%, 97.65%),
+    rgb(39.22%, 20.78%, 61.57%)
+  );
+  --bg-tri: rgb(23.92%, 14.9%, 34.9%);
+  --bg-2-stops: rgb(79.22%, 65.88%, 97.65%), rgb(86, 42, 141);
+}
+.jk-btn{
+  background: var(--clr-prime) !important;
 }
 .clr-prime {
   color: var(--clr-prime);
@@ -16,7 +23,6 @@
 }
 html {
   width: 100vw;
-  overflow-x: hidden;
 }
 /* ============================ header */
 .jk-head {
@@ -24,54 +30,89 @@ html {
 }
 
 /* ============================ Landing */
+
+
+/* Styles.css */
+.label-container {
+  position: relative; /* Position relative to allow absolute positioning of the span */
+}
+
+.jk-span-la {
+  position: absolute; /* Position the span absolutely */
+  left: 10px; /* Adjust based on your input padding */
+  top: 50%; /* Start at the middle of the input */
+  transform: translateY(-50%); /* Center the span vertically */
+  transition: all 0.3s ease; /* Smooth transition */
+  color: #666; /* Default color for the label */
+}
+
+.jk-input-la {
+  border: none;
+  border-bottom: 1px solid #ccc; /* Default border */
+  padding: 10px; /* Adjust padding for better aesthetics */
+  /*transition: border 0.3s ease;  Smooth transition for border */
+}
+
+/* When the input is focused, move the span and remove border */
+.jk-input-la:focus {
+  outline: none; /* Remove default outline */
+ /* border: none;  Remove border on focus */
+}
+
+.jk-input-la:focus + .jk-span-la,
+.jk-input-la:not(:placeholder-shown) + .jk-span-la {
+  top: 0; /* Move the span up */
+  transform: translateY(-100%); /* Move the span fully above the input */
+  font-size: 12px; /* Optionally reduce font size */
+  color: #000; /* Change color if needed */
+}
+
+
+
 .jk-slider {
   width: 90%;
 }
 .jk-slider-div {
-  height:auto;
+  height: auto;
 }
 .jk-head-h1 {
-    top: 210px;
-    left: 300px;
-    background: var(--bg-main);
+  top: 210px;
+  left: 300px;
+  background: var(--bg-main);
+}
+.jk-head-in {
+  height: 45vh;
+}
+.slick-dots li.slick-active button:before {
+  color: var(--clr-prime) !important;
+}
+.slick-arrow {
+  display: none !important;
+}
+@media screen and (max-width: 500px) {
+  .jk-head {
+    height: 10vh;
+  }
+  .jk-head-h1 {
+    top: 280px;
+    left: 150px;
   }
   .jk-head-in {
     height: 45vh;
   }
-  .slick-dots li.slick-active button:before {
-    color: var(--clr-prime) !important;
+}
+@media screen and (min-width: 300px) {
+  .jk-head-h1 {
+    top: 180px;
+    left: 150px;
   }
-  .slick-arrow {
-    display: none !important;
+}
+@media screen and (min-width: 300px) {
+  .jk-head-h1 {
+    top: 210px;
+    left: 150px;
   }
-  @media screen and (max-width: 500px) {
-    .jk-head {
-      height: 10vh;
-    }
-    .jk-head-h1 {
-      top: 280px;
-      left: 150px;
-    }
-    .jk-head-in{
-        height: 45vh;
-    }
-  }
-  @media screen and (min-width: 300px) {
-    
-    .jk-head-h1 {
-      top: 180px;
-      left: 150px;
-    }
-    
-  }
-  @media screen and (min-width: 300px) {
-    
-    .jk-head-h1 {
-      top: 210px;
-      left: 150px;
-    }
-    
-  }
+}
 /* ============================ Aboutus */
 
 /* ============================ OurService */
@@ -80,12 +121,11 @@ html {
   background: linear-gradient(10deg, var(--bg-2-stops));
   background: var(--bg-tri);
 }
-.jk-service-1{
-    background: var(--bg-tri);
-    
+.jk-service-1 {
+  background: var(--bg-tri);
 }
 .jk-serv-box {
-  height: 40%;
+  height: 36vh;
   padding: 40px 0 !important;
 }
 .jk-serv-box p {
@@ -113,35 +153,35 @@ html {
 .jk-pro-box {
   width: 250px;
   height: 150px;
-  background:var(--clr-prime);
+  background: var(--clr-prime);
 }
 .jk-pro-box:nth-child(even) {
   background-color: var(--bg-tri);
   color: wheat;
 }
 @media screen and (max-width: 580px) {
-    .jk-product-slide{
-        height: 45vh;
-    }
-    .jk-pro-box{
-        height: auto;
-    }
-    .pro-slide-one{
-      left: 250px;
-    }
-    .pro-slide-two{
-      right: 250px;
-    }
+  .jk-product-slide {
+    height: 45vh;
+  }
+  .jk-pro-box {
+    height: auto;
+  }
+  .pro-slide-one {
+    left: 250px;
+  }
+  .pro-slide-two {
+    right: 250px;
+  }
 }
 /* ============================ Product */
 .jk-testy {
-  height: 60vh;
+  height: 45vh;
 }
 .jk-testy-slide {
   width: 90%;
 }
 .jk-testy-slide div {
-  height: 55vh;
+  height: 30vh;
   margin-left: 1%;
 }
 .dbq {
@@ -149,25 +189,77 @@ html {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-style: italic;
 }
-@media screen and (max-width:499px) {
-  .jk-testy-slide div{
-    height:45vh;
+@media screen and (max-width: 499px) {
+  .jk-testy-slide div {
+    height: 25vh;
   }
 }
 /* ============================ Product */
 
 .jk-footer {
   height: auto;
-  background:var(--bg-tri);
+  background: var(--bg-tri);
 }
-.jk-footer-in{
-    background:var(--bg-sec);
+.jk-footer-in {
+  background: var(--bg-sec);
 }
 /* ============================ testimonal */
-.jk-border{
+.jk-border {
   border-bottom: 1px solid var(--bg-main) !important;
 }
-.star{
+.star {
   height: 20px;
   border: 2px solid red !important;
+}
+/* for menu */
+/* Full-screen overlay with blur */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Apply blur to background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  
+}
+
+/* Rate card styling */
+.rate-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  height: 50vh;
+  display: grid;
+  place-items: center;
+}
+
+/* Close button */
+.rate-card button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background:var(--bg-sec);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rate-card button:hover {
+  background-color: #0056b3;
+}
+.pre-view{
+  width: 90%;
+}
+.pre-view div p {
+  width: 100%;
+  text-align: left;
 }

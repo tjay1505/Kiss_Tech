@@ -11,7 +11,13 @@ import Footers from "./Compo/Footers";
 import Para from "./Compo/Para";
 import AOS from "aos";
 import 'aos/dist/aos.css'
+import { enableBodyScroll,disableBodyScroll } from "body-scroll-lock";
+
+
 function App() {
+  const [Scroll,setScroll] = useState(true)
+  Scroll ? enableBodyScroll(document) : disableBodyScroll(document)
+  
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
@@ -23,7 +29,7 @@ function App() {
       <Landing />
       <Para/>
       <About />
-      <OurService />
+      <OurService setScroll = {setScroll} Scroll={Scroll} />
       <Product />
       <Testymon />
       <Footers />

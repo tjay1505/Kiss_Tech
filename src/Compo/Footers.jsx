@@ -12,7 +12,7 @@ export default function Footers() {
       </div>
       <div className="col-11 jk-footer-in d-flex flex-md-row flex-column align-items-center justify-content-md-start justify-content-center">
         <div className="col-md-3 col-11 py-1 ms-5">
-          <p className="col-12 fs-3">nungambakkam</p>
+          <p className="col-12 fs-3">Nungambakkam</p>
           <p className="col-12">
             110 gandhi road , <br />
             subba road avenue <br />
@@ -50,33 +50,31 @@ export default function Footers() {
               <a href="https://www.instagram.com/kiss_tech_/profilecard/?igsh=MTFocGQ3MndhdjB0Ng==" className="text-white fs-3">
                 <i className="fa fa-twitter" aria-hidden="true"></i>
               </a>
-              <a href="" className="text-white fs-3">
+              <a href="https://www.linkedin.com/in/kiss-tech-46b533331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="text-white fs-3">
                 <i className="fa fa-linkedin-square" aria-hidden="true"></i>
               </a>
             </div>
           </ul>
         </div>
         <div className="col-md-6 col-11 d-flex ">
+          
+          
+          <div className="col-4 me-4 me-md-0">
+            <p className=" fw-medium">legal</p>
+            <p><a href="./t&c.html" className=" text-decoration-none text-white" target="_blank">privacy policy</a></p>
+            <p><a href="./refund.html" className=" text-decoration-none text-white" target="_blank">refund policy</a></p>
+            <p><a href="./refer.html" className=" text-decoration-none text-white" target="_blank">refer a friend</a></p>
+          </div>
+
           <div className="col-4">
             <p className=" fw-medium">company</p>
-            <p>career</p>
-            <p>contact us</p>
-            <p>about us</p>
-          </div>
-          <div className="col-4">
-            <p className=" fw-medium">Resource</p>
-            <p>industries</p>
-            <p>blog</p>
-          </div>
-          <div className="col-4">
-            <p className=" fw-medium">legal</p>
-            <p>privacy policy</p>
-            <p>refund policy</p>
+            <p><a href="tel:+917806969730" className=" text-decoration-none text-white">contact us</a></p>
+            <p><a href="#ABOUT" className=" text-decoration-none text-white">about us</a></p>
           </div>
         </div>
       </div>
       <div className="col-12 py-2 text-center">
-        copyright @ kisstech company - All right reserved || tj
+        copyright @ kisstech company - All right reserved 
       </div>
     </div>
   );

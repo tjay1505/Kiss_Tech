@@ -14,7 +14,7 @@ export default function Header() {
         <a href="#TESTY" className='text-black text-decoration-none' >our blog</a>
         <a href="#ABOUT" className='text-black text-decoration-none' >About</a>
         <a href="#SERVICE" className='text-black text-decoration-none'>Service</a>
-        <a href="#PRO" className='text-black text-decoration-none'>Career</a>
+        <a href="#PRO" className='text-black text-decoration-none'>portfolio</a>
       </ul>
       <a href="https://wa.me/917806969730" onClick={GoClick} target='_blank' className='btn border text-primary border-primary rounded-5 text-nowrap'> Contact us</a>
     </div>

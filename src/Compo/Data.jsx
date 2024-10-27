@@ -12,26 +12,54 @@ export const ServiceData = [
   {
     img: vid,
     h1: "video editing",
-    p: "Fully Compatible and user-friendly dynamic websites to perform the user’s requirements.",
-    links: "https://facebook.com",
+    p: "Enhance your video editing skills and achieve a professional quality look with courses led by top-rated industry experts.",
+    links: "c1",
+    subData:{
+      sh:'video editing',
+      on1:'65,000',
+      off1:'75,000',
+      on2:'34,000',
+      off2:'39,000'
+    }
   },
   {
     img: app,
     h1: "App development",
-    p: "Fully Compatible and user-friendly dynamic websites to perform the user’s requirements.",
-    links: "https://facebook.com",
+    p: "Elevate your app development skills and create polished, professional-quality applications with courses taught by top-rated industry experts.",
+    links: "c2",
+    subData:{
+      sh:'App development',
+      on1:'38,000',
+      off1:'45,000',
+      on2:'20,000',
+      off2:'24,000'
+    }
   },
   {
     img: web,
     h1: "Web development",
-    p: "Fully Compatible and user-friendly dynamic websites to perform the user’s requirements.m",
-    links: "https://facebook.com",
+    p: "Boost your web development skills and craft high-quality, professional websites with courses taught by top-rated industry experts.",
+    links: "c3",
+    subData:{
+      sh:'Web development',
+      on1:'20,000',
+      off1:'25,000',
+      on2:'11,000',
+      off2:'14,000'
+    }
   },
   {
     img: ui,
     h1: "UI / UX design",
-    p: "Fully Compatible and user-friendly dynamic websites to perform the user’s requirements.m",
-    links: "https://facebook.com",
+    p: "Master the art of UI/UX Design with our comprehensive UI/UX courses. Become a proficient UI/UX designer and unlock numerous career opportunities with our UI/UX courses in Chennai",
+    links: "c4",
+    subData:{
+      sh:'UI / UX design',
+      on1:'15,000',
+      off1:'20,000',
+      on2:'8,500',
+      off2:'12,000'
+    }
   },
 ];
 
@@ -48,21 +76,25 @@ const ProductData = [
     id: 1,
     img: pro1,
     txt: "Booking.com",
+    links:'https://www.behance.net/gallery/210826903/Mobile-app-cafe-Hajjar-cafe-complete-UIUX-Csae-Sudy'
   },
   {
     id: 2,
     img: pro2,
     txt: "Grocery store",
+    links:'https://www.behance.net/gallery/210828437/UI-UX-DESIGN-CASE-STUDY-GROCERY-SRORE-APP'
   },
   {
     id: 3,
     img: pro3,
     txt: "nacros",
+    links:'https://www.behance.net/gallery/210827609/NACROS-redesign-ui-project'
   },
   {
     id: 4,
     img: pro4,
     txt: "vida ev",
+    links:'https://www.behance.net/gallery/210793915/VIDA-REWORK-PROJCT-UI-UX-DESIGN'
   },
 ];
 

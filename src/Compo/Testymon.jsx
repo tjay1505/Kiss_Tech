@@ -79,8 +79,8 @@ export default function Testymon() {
         </p> 
       </div>
 
-      <div className="col-12 d-flex align-items-center justify-content-center jk-testy mb-4">
-        <Slider {...settings} className="jk-testy-slide">
+      <div className="col-12 d-flex align-items-center justify-content-center jk-testy ">
+        <Slider {...settings} className="jk-testy-slide ">
           {TestymonData.map((e) => (
             <React.Fragment key={e.id}>
               <div className="d-flex flex-column align-items-center justify-content-evenly shadow   jk-border text-start">
@@ -88,9 +88,9 @@ export default function Testymon() {
                   "
                 </span> */}
 
-                {/* Star rating div */}
+                {/* Star rating div 
                 
-                <img src={e.img} className="col-8" alt="" />
+                <img src={e.img} className="col-8" alt="" />*/}
                 <p className="fs-3 col-10">{e.names}</p>
                 <p className="fs-6 col-10">{e.p}</p>
                 <div className="col-10">
