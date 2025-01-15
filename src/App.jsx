@@ -1,39 +1,51 @@
-import { useEffect, useState } from "react";
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Headers from "./Compo/Headers";
-import Landing from "./Compo/Landing";
-import About from "./Compo/About";
-import OurService from "./Compo/OurService";
-import Product from "./Compo/Product";
-import Testymon from "./Compo/Testymon";
-import Footers from "./Compo/Footers";
-import Para from "./Compo/Para";
-import AOS from "aos";
-import 'aos/dist/aos.css'
-import { enableBodyScroll,disableBodyScroll } from "body-scroll-lock";
-
-
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LogIn from "./Compo@/LogIn";
+import SignUp from "./Compo@/SignUp";
+import Home from "./Compo@/Home";
+import { AuthProvider, userContext } from "./AuthContext";
+import ProtectedRoute from "./ProtectedRoute";
+import "./App.css";
+import Course from "./Compo@/Course";
+import PdfViewerWithSidebar from "./Compo@/PdfViewer";
+import CourseDetail from "./Compo@/CourseDetail";
+import AppOne from "./AppOne";
 function App() {
-  const [Scroll,setScroll] = useState(true)
-  Scroll ? enableBodyScroll(document) : disableBodyScroll(document)
-  
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-    });
-  }, []);
+  const [logUser, setLogUser] = useState("");
   return (
-    <div className=" container-fluid vh-auto  jk-cont">
-      <Headers />
-      <Landing />
-      <Para/>
-      <About />
-      <OurService setScroll = {setScroll} Scroll={Scroll} />
-      <Product />
-      <Testymon />
-      <Footers />
-    </div>
+    <userContext.Provider value={{ logUser, setLogUser }}>
+      <Router>
+        <AuthProvider>
+
+          <Routes>
+            <Route path="/"  element={<AppOne/>} />
+            <Route path="/login" element={<LogIn />} />
+            <Route path="/signUp" element={<SignUp />} />
+            <Route
+              path="/course"
+              element={
+                <ProtectedRoute>
+                  <Course />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route path="/pdf" element={<PdfViewerWithSidebar/>} />
+            <Route path="/course-details" element={<CourseDetail/>} />
+            <Route
+              path="/home"
+              element={
+                <ProtectedRoute>
+                  <Home />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </AuthProvider>
+      </Router>
+    </userContext.Provider>
   );
 }
 

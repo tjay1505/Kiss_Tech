@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import phWare from "../assets/phware.png";
 import Typed from "typed.js";
+import { useNavigate } from "react-router-dom";
 
 export default function Landing() {
   const typedElement = useRef(null);
@@ -23,8 +24,10 @@ export default function Landing() {
     };
   }, []);
 
+  const Navi = useNavigate()
+
   const handleSubmit = (e) => {
-    //e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); // Prevent default form submission
     //alert(`We will get back to you, ${name}`); // Adjust this logic as necessary
     console.log(name=='' && email=='' && phone=='');
     
@@ -32,7 +35,7 @@ export default function Landing() {
       //alert('suc')
     }
     else{
-      alert(`We will get back to you, ${name}`);
+      //alert(`We will get back to you, ${name}`);
     }
   };
 
@@ -96,6 +99,9 @@ export default function Landing() {
             <button className="btn jk-btn text-white col-12 mt-4" type="sumbit" onClick={handleSubmit}>
               Give enquiry
             </button>
+            <button className="btn btn-warning mt-3 col-12" onClick={() => Navi('/login')} >
+                      go class
+                    </button>
           </form>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../App.css'
+import '../AppOne.css'
 import logo from '../assets/logo.png'
 import { GoClick } from './Data'
 

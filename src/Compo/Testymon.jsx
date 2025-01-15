@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../App.css";
+import "../AppOne.css";
 import de from "../assets/newAss/whatsapp/vid1.mp4";
 import dr from "../assets/newAss/whatsapp/vid2.mp4";
 import { TestymonData } from "./Data";
