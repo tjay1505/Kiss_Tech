@@ -5,6 +5,7 @@ import { auth } from "../fireConfig";
 import { toast, ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as bootstrap from "bootstrap";
+import '../App.css'
 
 function SignUp() {
   const [mail, Setmail] = useState("");
@@ -78,11 +79,11 @@ function SignUp() {
           />
           <button
             onClick={() => SignIn()}
-            className="btn bg-success col-11 mb-3 shadow"
+            className="btn jk-bg-clr col-11 mb-3 shadow"
           >
             SignUp
           </button>
-          <p className="text-secondary" onClick={() => navi("/login")}>
+          <p className="text-secondary btn" onClick={() => navi("/login")}>
             Already have an Acc ?{" "}
             <span className="text-decoration-underline">Back to LogIn</span>
           </p>

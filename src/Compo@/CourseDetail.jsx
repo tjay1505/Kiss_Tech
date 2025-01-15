@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import HeaderSec from './HeaderSec'
 import { useLocation, useNavigate } from 'react-router-dom'
 import {Button,Card} from 'react-bootstrap'
@@ -7,7 +7,19 @@ export default function CourseDetail() {
   const navi = useNavigate()
   const {state} = useLocation()
   const [eachCourse,setEachCourse] = useState(state.courseData)
-  console.log(state.courseData[0].heading);
+  //console.log(state.courseData[0].heading);
+
+  useEffect(()=>{
+    document.addEventListener('contextmenu',(e) => {
+      e.preventDefault()
+    })
+    document.addEventListener('keydown',(e) => {
+      if(e.key == "F12"){
+        e.preventDefault
+      }
+    })
+  },[])
+
   return (
     <>
       <HeaderSec word={ state.courseData[0].topic || 'course details'} />

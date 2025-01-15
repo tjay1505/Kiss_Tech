@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeaderSec from "./HeaderSec";
 import { Button, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -206,14 +206,21 @@ const dtat = [
 
   },
 ];
-const topics = [
-  { title: "Introduction", page: 1 },
-  { title: "Chapter 1: Getting Started", page: 2 },
-  { title: "Chapter 2: Advanced Concepts", page: 5 },
-  { title: "Conclusion", page: 10 },
-];
+
 
 export default function Course() {
+
+  useEffect(()=>{
+      document.addEventListener('contextmenu',(e) => {
+        e.preventDefault()
+      })
+      document.addEventListener('keydown',(e) => {
+        if(e.key == "F12"){
+          e.preventDefault
+        }
+      })
+    },[])
+
   const navi = useNavigate();
   return (
     <>

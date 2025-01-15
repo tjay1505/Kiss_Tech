@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../fireConfig";
 import { useAuth } from "../AuthContext";
 import { ToastContainer, toast, Bounce } from "react-toastify";
-
+import logo from '../assets/logo.png'
+import '../App.css'
 function LogIn() {
   const [mail, setMail] = useState("");
   const [pass, setPass] = useState("");
@@ -62,6 +63,9 @@ function LogIn() {
   return (
     <>
       <div className="container-fluid vh-100 bg-body-secondary d-flex flex-column align-items-center justify-content-center">
+        <div className="col-12 d-flex align-items-center justify-content-center" >
+          <img src={logo} alt="" className="col-1 mb-4" />
+        </div>
         <div className="col-12 col-md-3 d-flex flex-column align-items-center justify-content-center">
           <input
             type="email"
@@ -76,10 +80,10 @@ function LogIn() {
             required
             onChange={(e) => setPass(e.target.value)}
           />
-          <button onClick={logIn} className="btn bg-primary col-11 my-3 shadow">
+          <button onClick={logIn} className="btn text-white jk-bg-clr col-11 my-3 shadow">
             Login
           </button>
-          <p className="text-secondary" onClick={() => navi("/signUp")}>
+          <p className="text-secondary btn" onClick={() => navi("/signUp")}>
             New User! Create Account{" "}
             <span className="text-decoration-underline">SignIn here</span>
           </p>
