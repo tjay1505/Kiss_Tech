@@ -14,7 +14,7 @@ import CourseDetail from "./Compo@/CourseDetail";
 import AppOne from "./AppOne";
 function App() {
   const [logUser, setLogUser] = useState("");
-  
+  console.log('Firebase API Key:', import.meta.env.VITE_FIREBASE_API_KEY);
   return (
     <userContext.Provider value={{ logUser, setLogUser }}>
       <Router>
