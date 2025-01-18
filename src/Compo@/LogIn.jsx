@@ -88,6 +88,7 @@ function LogIn() {
             <span className="text-decoration-underline">SignIn here</span>
           </p>
         </div>
+        
         <ToastContainer position="top-center" transition={Bounce} />
       </div>
     </>
