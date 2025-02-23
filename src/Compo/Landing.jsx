@@ -72,7 +72,7 @@ export default function Landing() {
     setError("");
     setSuccess("");
 
-    const formData = { name, email, phone };
+    const formData = { name, email, phone, inquiryType };
 
     try {
       const response = await fetch("/api/send-mail", {
@@ -82,12 +82,14 @@ export default function Landing() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      }).then(() => {
-        setName("");
-        setPhone("");
-        setEmail("");
-        toast.success("Successfully sent! our team will reach you");
-      });
+      })
+        .then(() => {
+          setName("");
+          setPhone("");
+          setEmail("");
+          toast.success("Successfully sent! our team will reach you");
+        })
+        .catch(() => toast.error("something went worng"));
 
       const result = await response.json();
       if (response.status === 200) {
@@ -97,9 +99,11 @@ export default function Landing() {
         setPhone("");
       } else {
         setError("There was an error sending the form.");
+        toast.error("something went worng");
       }
     } catch (err) {
       setError("An error occurred. Please try again later.");
+      toast.error("something went worng");
     } finally {
       setLoading(false);
     }

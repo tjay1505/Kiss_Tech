@@ -4,7 +4,7 @@
 import nodemailer from "nodemailer";
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { name, email, phone } = req.body;
+    const { name, email, phone, inquiryType } = req.body;
     // const name = "jaiku";
     // const email = "ohugi";
     // const phone = "67877788";
@@ -23,9 +23,9 @@ export default async function handler(req, res) {
     // Email details
     const mailOptions = {
       //from: "esakkiraj2002e@gmail.com", // Sender's email
-      to: "jaikumartjay@gmail.com", // Your email (receiving the form data)
+      to: "kisstechnungabakkam@gmail.com", // Your email (receiving the form data)
       subject: "testing New Form Submission",
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nType:`,
+      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nType:${inquiryType}`,
     };
 
     try {
