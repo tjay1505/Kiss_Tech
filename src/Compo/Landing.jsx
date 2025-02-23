@@ -5,9 +5,13 @@ import { useNavigate } from "react-router-dom";
 
 export default function Landing() {
   const typedElement = useRef(null);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  //const Navi = useNavigate();
 
   useEffect(() => {
     // Initialize Typed.js
@@ -24,18 +28,44 @@ export default function Landing() {
     };
   }, []);
 
-  const Navi = useNavigate()
+  const Navi = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission
-    //alert(`We will get back to you, ${name}`); // Adjust this logic as necessary
-    console.log(name=='' && email=='' && phone=='');
-    
-    if (name=='' && email=='' && phone==''){
-      //alert('suc')
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (name === "" || email === "" || phone === "") {
+      alert("Please fill in all fields");
+      return;
     }
-    else{
-      //alert(`We will get back to you, ${name}`);
+
+    setLoading(true);
+    setError("");
+    setSuccess("");
+
+    const formData = { name, email, phone };
+
+    try {
+      const response = await fetch("/api/send-mail", {
+        // API route on Vercel
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (response.status === 200) {
+        setSuccess("Form submitted successfully!");
+        setName("");
+        setEmail("");
+        setPhone("");
+      } else {
+        setError("There was an error sending the form.");
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again later.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -65,7 +95,9 @@ export default function Landing() {
                 onChange={(e) => setName(e.target.value)} // Corrected from e.value
                 aria-label="Name" // Accessibility
               />
-              <label htmlFor="name" className="jk-span-la">NAME</label>
+              <label htmlFor="name" className="jk-span-la">
+                NAME
+              </label>
             </div>
 
             <div className="label-container border my-4">
@@ -79,7 +111,9 @@ export default function Landing() {
                 onChange={(e) => setEmail(e.target.value)} // Add state handling for email
                 aria-label="Email" // Accessibility
               />
-              <label htmlFor="mail" className="jk-span-la">MAIL-ID</label>
+              <label htmlFor="mail" className="jk-span-la">
+                MAIL-ID
+              </label>
             </div>
 
             <div className="label-container border my-4">
@@ -93,15 +127,24 @@ export default function Landing() {
                 onChange={(e) => setPhone(e.target.value)} // Add state handling for phone
                 aria-label="Phone Number" // Accessibility
               />
-              <label htmlFor="ph" className="jk-span-la">PHONE NUMBER</label>
+              <label htmlFor="ph" className="jk-span-la">
+                PHONE NUMBER
+              </label>
             </div>
 
-            <button className="btn jk-btn text-white col-12 mt-4" type="sumbit" onClick={handleSubmit}>
+            <button
+              className="btn jk-btn text-white col-12 mt-4"
+              type="sumbit"
+              onClick={handleSubmit}
+            >
               Give enquiry
             </button>
-            <button className="btn btn-warning mt-3 col-12" onClick={() => Navi('/login')} >
-                      go class
-                    </button>
+            <button
+              className="btn btn-warning mt-3 col-12"
+              onClick={() => Navi("/login")}
+            >
+              go class
+            </button>
           </form>
         </div>
       </div>
