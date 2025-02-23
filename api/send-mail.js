@@ -15,7 +15,7 @@ export default async function handler(req, res) {
         //user: process.env.GMAIL_USER, // Use environment variable for Gmail user
         //pass: process.env.GMAIL_PASSWORD, // Use environment variable for Gmail App Password
         user: "esakkiraj2002e@gmail.com",
-        pass: import.meta.env.GOOGLE_PASSWORD,
+        pass: "dxug rkod oiwj zpsj",
       },
     });
     //dxug rkod oiwj zpsj
