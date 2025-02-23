@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import phWare from "../assets/phware.png";
 import Typed from "typed.js";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 
 export default function Landing() {
   const typedElement = useRef(null);
@@ -34,6 +35,24 @@ export default function Landing() {
     e.preventDefault();
     if (name === "" || email === "" || phone === "") {
       alert("Please fill in all fields");
+      toast.warning("Please fill in all fields", { autoClose: 1500 });
+      return;
+    }
+
+    // Email validation (simple regex for basic format check)
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+      toast.warning("Please enter a valid email address", { autoClose: 1500 });
+      return;
+    }
+
+    // Phone number validation (must be exactly 10 digits)
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(phone)) {
+      toast.warning("Please enter a valid 10-digit phone number", {
+        autoClose: 1500,
+      });
+
       return;
     }
 
@@ -51,6 +70,8 @@ export default function Landing() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
+      }).then(() => {
+        toast.success("Successfully sent! our team will reach you");
       });
 
       const result = await response.json();
@@ -148,6 +169,7 @@ export default function Landing() {
           </form>
         </div>
       </div>
+      <ToastContainer position="top-center" transition={Bounce} />
     </div>
   );
 }
