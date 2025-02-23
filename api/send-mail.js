@@ -4,10 +4,10 @@
 import nodemailer from "nodemailer";
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    //const { name, email, phone } = req.body;
-    const name = "jaiku";
-    const email = "ohugi";
-    const phone = "67877788";
+    const { name, email, phone } = req.body;
+    // const name = "jaiku";
+    // const email = "ohugi";
+    // const phone = "67877788";
     // Create a transporter using Gmail (use app password for Gmail authentication)
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     // Email details
     const mailOptions = {
       //from: process.env.GMAIL_USER, // Sender's email
-      to: "jaikumartjay@gmail.com", // Your email (receiving the form data)
+      to: "esakki2002raj@gmail.com", // Your email (receiving the form data)
       subject: "testing New Form Submission",
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}`,
     };
