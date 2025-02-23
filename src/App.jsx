@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LogIn from "./Compo@/LogIn";
 import SignUp from "./Compo@/SignUp";
@@ -14,14 +14,12 @@ import CourseDetail from "./Compo@/CourseDetail";
 import AppOne from "./AppOne";
 function App() {
   const [logUser, setLogUser] = useState("");
-  console.log('Firebase API Key:', import.meta.env.VITE_FIREBASE_API_KEY);
   return (
     <userContext.Provider value={{ logUser, setLogUser }}>
       <Router>
         <AuthProvider>
-
           <Routes>
-            <Route path="/"  element={<AppOne/>} />
+            <Route path="/" element={<AppOne />} />
             <Route path="/login" element={<LogIn />} />
             <Route path="/signUp" element={<SignUp />} />
             <Route
@@ -33,8 +31,22 @@ function App() {
               }
             />
 
-            <Route path="/pdf" element={<ProtectedRoute><PdfViewerWithSidebar/></ProtectedRoute>} />
-            <Route path="/course-details" element={<ProtectedRoute><CourseDetail/></ProtectedRoute>} />
+            <Route
+              path="/pdf"
+              element={
+                <ProtectedRoute>
+                  <PdfViewerWithSidebar />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/course-details"
+              element={
+                <ProtectedRoute>
+                  <CourseDetail />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/home"
               element={

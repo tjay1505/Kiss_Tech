@@ -12,6 +12,7 @@ export default function Landing() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [inquiryType, setInquiryType] = useState("");
   //const Navi = useNavigate();
 
   useEffect(() => {
@@ -33,8 +34,14 @@ export default function Landing() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (name === "" || email === "" || phone === "") {
-      alert("Please fill in all fields");
+
+    if (
+      name === "" ||
+      email === "" ||
+      phone === "" ||
+      inquiryType === "" ||
+      inquiryType === "Select Inquiry Type"
+    ) {
       toast.warning("Please fill in all fields", { autoClose: 1500 });
       return;
     }
@@ -53,6 +60,11 @@ export default function Landing() {
         autoClose: 1500,
       });
 
+      //for type
+      if (inquiryType == "" || inquiryType == "Select Inquiry Type") {
+        toast.warning("Choose an Career path");
+      }
+
       return;
     }
 
@@ -60,7 +72,7 @@ export default function Landing() {
     setError("");
     setSuccess("");
 
-    const formData = { name, email, phone };
+    const formData = { name, email, phone, inquiryType };
 
     try {
       const response = await fetch("/api/send-mail", {
@@ -71,6 +83,9 @@ export default function Landing() {
         },
         body: JSON.stringify(formData),
       }).then(() => {
+        setName("");
+        setPhone("");
+        setEmail("");
         toast.success("Successfully sent! our team will reach you");
       });
 
@@ -151,6 +166,31 @@ export default function Landing() {
               <label htmlFor="ph" className="jk-span-la">
                 PHONE NUMBER
               </label>
+            </div>
+
+            <div className="label-container border my-4">
+              <select
+                id="inquiryType"
+                className="jk-input-la col-12"
+                required
+                value={inquiryType}
+                onChange={(e) => setInquiryType(e.target.value)}
+                aria-label="Inquiry Type"
+              >
+                <option value="Select Inquiry Type" selected>
+                  Select your careee path
+                </option>
+                <option value="UI UX design">UI UX design</option>
+                <option value="Frontend Development">
+                  Frontend Development
+                </option>
+                <option value="Digital Marketing">Digital Marketing</option>
+                <option value="Video Editing">Video Editing</option>
+                <option value="Web design">Web design</option>
+                <option value="Java programming">Java programming</option>
+                <option value="Python programming">Python programming</option>
+                <option value="Graphic designing">Graphic designing</option>
+              </select>
             </div>
 
             <button
