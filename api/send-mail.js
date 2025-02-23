@@ -22,7 +22,7 @@ export default async function handler(req, res) {
       //from: process.env.GMAIL_USER, // Sender's email
       to: "kisstechnungabakkam@gmail.com", // Your email (receiving the form data)
       subject: "testing New Form Submission",
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}`,
+      text: `Name: ${name}\nEmail:kisstechnungabakkam@gmail.com\nPhone: ${phone}`,
     };
 
     try {
