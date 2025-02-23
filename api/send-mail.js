@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     // Email details
     const mailOptions = {
       //from: process.env.GMAIL_USER, // Sender's email
-      to: "esakki2002raj@gmail.com", // Your email (receiving the form data)
+      to: "kisstechnungabakkam@gmail.com", // Your email (receiving the form data)
       subject: "testing New Form Submission",
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}`,
     };
