@@ -72,7 +72,7 @@ export default function Landing() {
     setError("");
     setSuccess("");
 
-    const formData = { name, email, phone, inquiryType };
+    const formData = { name, email, phone };
 
     try {
       const response = await fetch("/api/send-mail", {
