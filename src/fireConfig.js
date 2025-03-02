@@ -17,14 +17,7 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDaKXELbEW3jCcTGvQ3R58yfxGXRa2-rm0",
-//   authDomain: "kisstutorial-abf6d.firebaseapp.com",
-//   projectId: "kisstutorial-abf6d",
-//   storageBucket: "kisstutorial-abf6d.firebasestorage.app",
-//   messagingSenderId: "928621420037",
-//   appId: "1:928621420037:web:163cb04aa3f1cbd2d0866c",
-// };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
