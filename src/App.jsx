@@ -12,7 +12,7 @@ import Course from "./Compo@/Course";
 import PdfViewerWithSidebar from "./Compo@/PdfViewer";
 import CourseDetail from "./Compo@/CourseDetail";
 import AppOne from "./AppOne";
-import AdminPanel from "./Compo@/adminPanel";
+import AdminPanel from "./Compo@/AdminPanel";
 import TemplateView from "./Compo@/TemplateView";
 
 function App() {
