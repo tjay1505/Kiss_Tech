@@ -44,3 +44,62 @@
     background: #ffc107; /* Yellow for warning */
   }
   
+
+/* Remove focus outline & shadow */
+.accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Active accordion background color */
+.accordion-button:not(.collapsed) {
+  background-color: #bb86fc9e !important;
+  color: #fff;
+  box-shadow: none; /* Just to be sure */
+  outline: none;
+}
+
+/* Optional: Smooth transition */
+.accordion-button {
+  transition: background-color 0.3s ease;
+}
+
+
+.shiny-text {
+  font-size: 1rem;
+  font-weight: lighter;
+  font-style: italic;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  background: linear-gradient(90deg, #bb86fc, #ffffff, #bb86fc);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 2s linear infinite;
+}
+
+.arrow {
+  margin-left: 6px;
+  animation: arrowMove 3s ease-in-out infinite;
+  color: black;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -100% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes arrowMove {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}

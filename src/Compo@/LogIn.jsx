@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../fireConfig";
 import { useAuth } from "../AuthContext";
@@ -17,7 +17,12 @@ function LogIn() {
   const logIn = async () => {
     try {
       if (mail && pass && pass.length > 4) {
-        const userCredential = await signInWithEmailAndPassword(
+       if(mail == 'Admin@kisstech.com' && pass == 'esaki@123'){
+        console.log('admin');
+        navi('/admin-panel')
+       }
+       else{
+         const userCredential = await signInWithEmailAndPassword(
           auth,
           mail,
           pass
@@ -39,6 +44,7 @@ function LogIn() {
           onClose: () => navi("/home"),
           autoClose: 1500,
         });
+       }
       } else if (mail && pass && pass.length < 4) {
         toast.warning("password miss-matching check password", {
           autoClose: 1500,
@@ -87,6 +93,9 @@ function LogIn() {
             New User! Create Account{" "}
             <span className="text-decoration-underline">SignIn here</span>
           </p>
+          {/* <button onClick={logIn} className="btn text-white jk-bg-clr col-11 my-3 shadow">
+            Admin
+          </button> */}
         </div>
         
         <ToastContainer position="top-center" transition={Bounce} />

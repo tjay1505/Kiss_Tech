@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import  { useState } from "react";
+import { BrowserRouter as Router, Routes, Route,  } from "react-router-dom";
 import LogIn from "./Compo@/LogIn";
 import SignUp from "./Compo@/SignUp";
 import Home from "./Compo@/Home";
@@ -12,7 +12,11 @@ import Course from "./Compo@/Course";
 import PdfViewerWithSidebar from "./Compo@/PdfViewer";
 import CourseDetail from "./Compo@/CourseDetail";
 import AppOne from "./AppOne";
+import AdminPanel from "./Compo@/adminPanel";
+import TemplateView from "./Compo@/TemplateView";
+
 function App() {
+  
   const [logUser, setLogUser] = useState("");
   return (
     <userContext.Provider value={{ logUser, setLogUser }}>
@@ -22,6 +26,11 @@ function App() {
             <Route path="/" element={<AppOne />} />
             <Route path="/login" element={<LogIn />} />
             <Route path="/signUp" element={<SignUp />} />
+            <Route path="/admin-panel" element={               <ProtectedRoute>
+                  <AdminPanel/> 
+                </ProtectedRoute>} />
+            <Route path="/demo-class/course" element={<TemplateView/>} />
+            
             <Route
               path="/course"
               element={
