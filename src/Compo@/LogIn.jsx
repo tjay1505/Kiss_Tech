@@ -19,7 +19,29 @@ function LogIn() {
       if (mail && pass && pass.length > 4) {
        if(mail == 'Admin@kisstech.com' && pass == 'esaki@123'){
         console.log('admin');
-        navi('/admin-panel')
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          mail,
+          pass
+        );
+
+        localStorage.setItem(
+          "IDlog",
+          JSON.stringify( userCredential.user.email )
+        );
+        //setLogUser(localStorage.getItem("IDlog"));
+
+        let expiryTime = new Date().getTime() + 120 * 120 * 1000; // 30 seconds for testing
+        localStorage.setItem(
+          "authToken",
+          JSON.stringify({ expiry: expiryTime })
+        );
+        setIsAuthenticated(true); // Update authentication state
+        toast.success("Login successfully! Wait Don't Refresh", {
+          onClose: () => navi("/admin-panel"),
+          autoClose: 1500,
+        });
+       // navi('/admin-panel')
        }
        else{
          const userCredential = await signInWithEmailAndPassword(
